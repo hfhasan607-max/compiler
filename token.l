@@ -13,6 +13,7 @@ if|else|while|for|int|float|main   { printf("KEYWORD: %s\n", yytext); }
 [a-zA-Z][a-zA-Z0-9]* { printf("IDENTIFIER: %s\n", yytext); }
 [ \t\n]+            { /* Ignore whitespace */ }
 [=+*/%-]            {printf("ARITHMETIC_OP: %s\n",yytext); }
+(&&)|(\|\|)|!       { printf("LOGICAL_OP: %s\n", yytext); }
 [=,/,*,-,%,+]+      { printf("Operator: %s\n", yytext); }
 .                   { printf("UNKNOWN: %s\n", yytext); }
 
