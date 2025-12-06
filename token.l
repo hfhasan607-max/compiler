@@ -11,6 +11,7 @@
 [0-9]+\.[0-9]+      { printf("FLOAT: %s\n", yytext); }
 if|else|while|for|int|float|main   { printf("KEYWORD: %s\n", yytext); }
 [a-zA-Z][a-zA-Z0-9]* { printf("IDENTIFIER: %s\n", yytext); }
+\"(\\.|[^\\"])*\"     { printf("STRING: %s\n", yytext); }
 [ \t\n]+            { /* Ignore whitespace */ }
 [=+*/%-]            {printf("ARITHMETIC_OP: %s\n",yytext); }
 (&&)|(\|\|)|!       { printf("LOGICAL_OP: %s\n", yytext); }
